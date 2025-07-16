@@ -1,0 +1,17 @@
+1- sum() function -> group me jitni values h sabko add kr dega
+2- mean() function -> group me jitni values h sabko average value calculate krke de dega
+3- count() -> group me jitni non NaN values h sabko count kr dega
+4- min() -> group me jitni values h sabko minimum value ko return kr dega
+5- max() -> group me jitni values h sabko maximum value ko return kr dega
+6- std() -> group me jitni values h sabko standard deviation ko return kr dega
+
+
+---------------------------------------------------------------------------------
+what is std (standard deviation) ?
+
+standard deviation -> is a measure of the spread of a set of values. It tells you how much the values in a column are spread out or different from the mean(average). simply samjhe toh jitni values h sabko average value ko calculate krke de dega. 
+
+std = sqrt((x1 - x)^2 + (x2 - x)^2 + (x3 - x)^2 + (x4 - x)^2 + (x5 - x)^2 + (x6 - x)^2 + (x7 - x)^2 + (x8 - x)^2 + (x9 - x)^2 + (x10 - x)^2)
+
+std = sqrt(sum((x - x)^2))
+std = sqrt(sum((x - mean)^2))

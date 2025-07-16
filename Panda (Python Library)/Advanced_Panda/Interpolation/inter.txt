@@ -1,0 +1,29 @@
+Interpolation -> is a technique jiski help se jo missing values hoti h unme ek estimated values fill  
+                 kr skte h numerical column ke andar.
+
+# linear interpolation -> is the default interpolation method in pandas.
+
+# fillna() method -> is used to fill missing values in a DataFrame
+
+# interpolate() method -> is used to interpolate missing values in a DataFrame, jiska use krke hm data 
+                          ko fill kr skte h kisi bhi column me ya kisi bhi dataframe me. 
+
+# ffill() method -> is used to forward fill missing values in a DataFrame
+
+# bfill() method -> is used to backward fill missing values in a DataFrame
+
+---------------------------------------------------------------------------------
+
+10
+20
+NaN
+40
+50
+
+Q.) Why use Interpolation ?
+Ans. Because it is a good way to estimate the missing values in a dataset.
+     Benefits: 
+        1- preserve data integrity 
+        2- smooth trends in the data
+        3- avoid data loss
+        4- reduce noise in the data

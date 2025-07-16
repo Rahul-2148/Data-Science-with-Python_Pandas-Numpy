@@ -1,0 +1,37 @@
+1- select specific column 
+2- filter rows 
+3- combine multiple conditions
+
+
+Note: i. agar hame columns ko filter krna h toh use ->  square brackets 🧱
+      ii. agar hame Rows ko filter krna h toh use ->  dot operator 🔍 (boolean operator ✅)
+
+-----------------------------------
+
+📌 selecting columns 
+kisi bhi dataframe me se kisi ek specific column ko select krna for Data Analysis, tb hm selecting ka use krte h.
+
+🧾 selecting columns returns: 
+     1- a series 📈
+     2- dataframe (multiple columns of data) 📊
+ 
+    🛠 syntax: 
+        column = df['column name'] 
+        subset = df[['column1', 'column2', 'column3', '...', 'column n']]
+
+----------
+
+🎯 filtering rows 
+filtering rows ka mtlb h aesi rows ko extract krna jo hmari kisi specific condition ko satisfy kr rhi h.
+
+✅ boolean indexing 
+
+# 📌 filtering based on a single condition
+filtered_Rows = df[df['column name'] == value]  
+     eg., df[df['Salary'] > 50000]
+
+# 🔗 filtering based on multiple conditions
+
+# 🛠 syntax: 
+filtered_Rows = df[(df['column1'] == value1) & (df['column2'] == value2) & (df['column3'] == value3) & (df['column4'] == value4)]  
+     eg., df[(df['Salary'] > 50000) & (df['Age'] < 30)]

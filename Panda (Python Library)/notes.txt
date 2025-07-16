@@ -1,0 +1,28 @@
+sabse pahle toh pip install pandas kr lena h aur import pandas as pd kr lena h
+agar excel file ka data read krna h toh ye library install kro ->  pip install openpyxl
+
+# gcsfs library -> google cloud storage file system -> it is used to read data from google cloud storage.
+
+---------------------------------------------------------------------------------
+🚀Python Pandas Notes:
+
+1. pandas is a library for data manipulation and analysis.
+
+2. DataFrames are two-dimensional, size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns).
+
+3. Series are one-dimensional labeled array.
+
+4. Panel is three-dimensional, size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows, columns, and items).
+
+5. DataFrame is a 2D, size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns).
+
+
+📌panda describe: 
+count -> returns the number of non-NaN or non missing values of each column in the object
+mean -> is the arithmetic average of the values in each column
+std -> is the standard deviation of the values in a column -> std stands for standard deviation tells you how much the values in a column are spread out or different from the mean(average)
+min -> is the minimum value in each column
+max -> is the maximum value in each column
+25% -> is the 25th percentile of the values in each column
+50% -> is the 50th percentile of the values in each column
+75% -> is the 75th percentile of the values in each column

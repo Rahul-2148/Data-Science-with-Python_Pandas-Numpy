@@ -1,0 +1,22 @@
+
+🔥what is merging & Joining ?
+🚀Ans. Merging is a process of combining 2 ya 2 se jyada dataframes ke rows ko combine krna based on a 
+       column key column. (yaha un rows ko combine kiya jata h jinki keys match kr jati h similar to SQL Join).
+
+
+🚀Ans. Joining is also a process of combining multiple datasets into a single dataset.
+
+🔥where and why we use Merging & Joining ?
+Ans. Maan lete h ki aap ECommerce company me h, aur wo company ne aapko bola ki 2024 me jin customers ne hamare yaha se samaan (products) kharida tha unka list nikalo, aur 2025 me jin customers ne hamare yaha se samaan (products) kharida tha unka list nikalo, aur jo common naam h yani ki kuch aese customers jo dono saal (years) me purchase kari uska bhi list data nikal krdo, toh yaha pr kya kr rhe h, hm 2 multiple datasets ko combine krke result nikal rhe h right, so isko kaha jata h Merging & Cocatenating dataframes. So ye dono chij kaise kari jati h aaaj hm sikhenge pandas me..
+
+------------------------------------------------------------
+➕💡Joins in pandas ->
+
+inner join -> means only common rows will be shown
+outer join -> means sari rows ko merge kr lega aur jo value match nhi hoga use NaN se fill kr dega 
+left join -> means jo left side wali dataframe h use rakhega jo right wale se match karega
+right join -> means jo right side wali dataframe h use rakhega jo left wale se compare kr lega
+cross join -> means combining my dataframe rows with another dataframe rows, basically it produce 
+              cartesian product of 2 datasets. (m rows * n rows)
+left_anti -> means only rows of left dataframe will be shown
+right_anti -> means only rows of right dataframe will be shown

@@ -1,0 +1,12 @@
+1- columns, rows?
+2- what type of data?
+3- missing data?
+
+info()
+method 
+
+1- number of rows and columns
+2- column names
+3- data type of each column -> int64 float64 object etc
+4- non null counts of each column -> missing data count of each column
+5- memory usage of the data frame -> how much memory is consumed by the data frame
