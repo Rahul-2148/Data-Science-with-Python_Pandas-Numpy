@@ -1,0 +1,117 @@
+
+📘 Chapter: Handling Missing Values in NumPy
+
+🔍 Q. NumPy me Missing Values kya hoti hain?
+
+➡️ Jab array ke andar koi value missing ho (i.e. present hi na ho ya unknown ho), to usse **missing value** kehte hain.
+
+➡️ NumPy me aise missing data ko handle karne ke liye **np.nan** (Not a Number) ka use kiya jata hai.
+
+🧠 Note: np.nan ka data type hamesha `float` hota hai — chahe array integer type ka ho.
+
+--------------------------------------------------
+
+🤖 Q. Missing values detect kaise karein?
+
+🛠️ Use: `np.isnan()`
+
+```python
+import numpy as np
+
+arr = np.array([10, 20, np.nan, 40, np.nan])
+print(np.isnan(arr))
+# Output: [False False  True False  True]
+```
+
+👆 Ye batata hai kaunse index par `nan` present hai.
+
+--------------------------------------------------
+
+🧮 Q. Total kitne missing values hain? (Count)
+
+🛠️ Use: `np.isnan(arr).sum()`
+
+```python
+np.isnan(arr).sum()
+# Output: 2
+```
+
+--------------------------------------------------
+
+🧹 Q. Missing values ko remove kaise karein?
+
+🛠️ Use: `arr[~np.isnan(arr)]`
+
+```python
+clean_arr = arr[~np.isnan(arr)]
+print(clean_arr)
+# Output: [10. 20. 40.]
+```
+
+🔁 ~ ka matlab hota hai "not", yaani jaha `nan` nahi hai wahi values rakho.
+
+--------------------------------------------------
+
+🔁 Q. Missing values ko replace (impute) kaise karein?
+
+📌 1. Replace with 0:
+```python
+arr[np.isnan(arr)] = 0
+# Output: [10. 20. 0. 40. 0.]
+```
+
+📌 2. Replace with mean:
+```python
+mean_val = np.nanmean(arr)
+arr[np.isnan(arr)] = mean_val
+```
+
+💡 `np.nanmean()` nan ko ignore karke average nikalta hai.
+
+--------------------------------------------------
+
+📊 Q. Nan-aware special functions:
+
+NumPy me aise kuch functions hote hain jo nan ko automatically ignore kar dete hain:
+
+- `np.nanmean(arr)` → nan ignore karke average
+- `np.nansum(arr)` → nan ignore karke sum
+- `np.nanmax(arr)` → nan ignore karke max
+- `np.nanmin(arr)` → nan ignore karke min
+
+--------------------------------------------------
+
+⚠️ Q. np.nan ka behavior alag kyu hota hai?
+
+😵 Confusing cheezein:
+
+- `np.nan == np.nan` → ❌ False
+- `np.isnan(np.nan)` → ✅ True
+- `np.nan + 10` → 🔁 nan
+- `np.nan * 5` → 🔁 nan
+
+➡️ Isiliye kabhi bhi nan ko compare mat karo, hamesha `np.isnan()` ka use karo!
+
+--------------------------------------------------
+
+📌 Real Life Example:
+
+Maan lo tumhare paas ek survey data hai:
+```python
+data = np.array([25, 30, np.nan, 45, np.nan, 50])
+```
+
+Ab tumhe chahiye:
+✅ Total valid entries → `~np.isnan(data).sum()`  
+✅ Missing entries → `np.isnan(data).sum()`  
+✅ Average age (without nan) → `np.nanmean(data)`
+
+--------------------------------------------------
+
+🎯 Final Notes:
+
+🔹 Real-world data me missing values common hoti hain (surveys, sensors, APIs etc.)
+
+🔹 NumPy me `np.nan` ka use karke unhe easily **detect**, **remove**, aur **replace** kar sakte hain.
+
+🔹 Nan-aware functions data loss ke bina analysis karne me madad karte hain.

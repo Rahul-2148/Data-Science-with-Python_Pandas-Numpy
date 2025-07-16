@@ -1,0 +1,123 @@
+
+🐼 Advanced Pandas - Expert Level Notes
+
+These notes cover **high-level features** of the Pandas library that are essential for working with **large-scale, complex datasets** efficiently and professionally.
+
+🔷 1. MultiIndex (Hierarchical Indexing)
+------------------------------------------
+📌 Allows multiple levels of indexing on rows and columns (like grouped rows in Excel).
+
+```python
+import pandas as pd
+arrays = [
+    ['A', 'A', 'B', 'B'],
+    [1, 2, 1, 2]
+]
+index = pd.MultiIndex.from_arrays(arrays, names=('Group', 'Subgroup'))
+df = pd.DataFrame({'Value': [10, 20, 30, 40]}, index=index)
+```
+
+🎯 Useful for: Pivot tables, grouped operations, multi-level analysis
+
+🔷 2. Pivot Tables & Crosstab
+------------------------------
+✅ Reshape data and compute aggregations with ease
+
+```python
+# Pivot Table
+df.pivot_table(values='Sales', index='Region', columns='Product', aggfunc='sum')
+
+# Crosstab (like contingency table)
+pd.crosstab(df['Gender'], df['Product'])
+```
+
+🔷 3. Reshaping with melt(), stack(), unstack()
+-------------------------------------------------
+📌 Transform data between long and wide formats
+
+```python
+df_melted = pd.melt(df, id_vars=['Name'], value_vars=['Math', 'Science'])
+df_stacked = df.stack()
+df_unstacked = df.unstack()
+```
+
+🔷 4. Time Series Analysis 🕒
+------------------------------
+✅ Pandas has powerful tools for working with time-indexed data
+
+```python
+dates = pd.date_range('2025-01-01', periods=6, freq='D')
+ts = pd.Series([1, 2, 3, 4, 5, 6], index=dates)
+
+ts.resample('2D').sum()   # Resample every 2 days
+ts.shift(1)               # Shift values forward
+ts.rolling(window=3).mean()  # Rolling average
+```
+
+🔷 5. Categorical Data 📦
+--------------------------
+✅ Use `category` dtype to save memory and speed up operations
+
+```python
+df['Category'] = df['Category'].astype('category')
+```
+
+🔷 6. Apply, Map, Transform, Aggregate
+----------------------------------------
+✅ Powerful tools to apply custom functions across data
+
+```python
+df['Tax'] = df['Sales'].apply(lambda x: x * 0.18)
+df.groupby('Region')['Sales'].agg(['sum', 'mean'])
+df.groupby('Region').transform('mean')
+```
+
+🔷 7. Window Functions (Rolling, Expanding)
+--------------------------------------------
+📈 Useful in time-series and financial data analysis
+
+```python
+df['RollingAvg'] = df['Sales'].rolling(window=3).mean()
+df['ExpandingSum'] = df['Sales'].expanding().sum()
+```
+
+🔷 8. Query() Method 🔍
+-------------------------
+✅ Filter DataFrames using SQL-like expressions
+
+```python
+df.query('Age > 25 and Income < 50000')
+```
+
+🔷 9. Method Chaining 🔗
+--------------------------
+✅ Write clean, readable, one-liner code
+
+```python
+result = (df.dropna()
+            .query('Age > 25')
+            .assign(Tax=lambda x: x['Income'] * 0.15)
+            .sort_values('Tax'))
+```
+
+🔷 10. Performance Tips & Tricks ⚡
+-------------------------------------
+- 🧠 Use `category` dtype for repetitive text
+- 🧪 Use `df.eval()` and `df.query()` for fast filtering
+- 🧮 Vectorized ops >> `apply()` >> for loops
+- 🗃️ Avoid loops; use `groupby`, `pivot_table`, `transform`
+
+📌 Example:
+```python
+df['New'] = df.eval('Sales * 0.9 + Tax')
+```
+
+🔹 Summary ✨
+------------------
+These advanced Pandas tools are essential for:
+✅ Large dataset analysis  
+✅ Financial & time series modeling  
+✅ Professional-grade reporting & dashboards  
+✅ Memory-optimized, high-performance data pipelines
+
+🐼 Pandas isn't just a library, it's a data toolkit! Mastering these features can 10x your productivity 🚀

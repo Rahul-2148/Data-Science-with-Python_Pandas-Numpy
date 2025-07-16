@@ -1,0 +1,130 @@
+
+📘 NumPy (Numerical Python) - Complete Notes
+
+🔹 1. What is NumPy?
+----------------------
+NumPy is a powerful open-source Python library used for **numerical and scientific computing**. 
+It provides support for **multi-dimensional arrays (ndarray)** and includes functions for **mathematics, statistics, linear algebra, random operations**, and much more.
+
+🧮 It stands for **Numerical Python** and is widely used in **data science, machine learning, AI, engineering, image processing**, and other computational fields.
+
+🔹 2. Why NumPy was Needed? (क्यों जरूरत पड़ी)
+--------------------------------------------------
+✅ Python की native lists और loops large datasets पर बहुत slow होती हैं।  
+✅ Memory usage ज़्यादा होता है और performance कम।
+
+🔧 NumPy solves this by:
+- 🛠️ Backend in C/Fortran → Fast execution
+- ⚡ Vectorized operations → No need for slow Python loops
+- 💾 Efficient memory usage → Compact data storage
+- 🔁 Broadcasting → Array operations of different shapes
+
+📌 Example:
+```python
+# Without NumPy (slow)
+result = [x * 2 for x in range(1000000)]
+
+# With NumPy (fast)
+import numpy as np
+arr = np.arange(1000000)
+result = arr * 2
+```
+
+🔹 3. How to Install NumPy?
+-----------------------------
+📥 Using pip:
+```
+pip install numpy
+```
+📦 Using conda (Anaconda):
+```
+conda install numpy
+```
+
+🔹 4. Features of NumPy
+-------------------------
+✨ Fast n-dimensional array (ndarray)
+✨ Vectorized operations (no explicit loop)
+✨ Broadcasting support
+✨ Mathematical, logical, statistical, linear algebra & random operations
+✨ Integration with other languages (C, C++, Fortran)
+
+🔹 5. What is ndarray?
+------------------------
+An `ndarray` is NumPy’s core object: a **multi-dimensional array**.  
+It is:
+- Faster ⏩ than Python lists
+- Supports vectorized calculations ➕➖✖️➗
+- Uses less memory 🧠
+
+```python
+import numpy as np
+a = np.array([1, 2, 3])
+print(type(a))  # <class 'numpy.ndarray'>
+```
+
+🔹 6. NumPy vs Python List
+----------------------------
+| Feature        | Python List ❌ | NumPy Array                 ✅ |
+|----------------|----------------|---------------------------------|
+| Speed          | Slow            | Very Fast (x52 times faster)   |
+| Memory         | High            | Efficient                      |
+| Operations     | Manual loop     | Vectorized                     |
+| Functions      | Very limited    | Extensive                      |
+| Broadcasting   | Not supported   | Supported                      |
+
+🔹 7. Common NumPy Functions
+------------------------------
+📌 Creation:
+- `np.array()` → Convert list to array
+- `np.zeros()`, `np.ones()` → Arrays of 0s and 1s
+- `np.arange(start, stop, step)` → Range of values
+- `np.linspace(start, stop, num)` → Evenly spaced values
+
+📌 Reshaping and Info:
+- `np.reshape()`, `np.ravel()` → Shape manipulation
+- `arr.shape`, `arr.dtype`, `arr.ndim` → Attributes
+
+📌 Math Operations:
+- `np.sum()`, `np.mean()`, `np.std()`, `np.max()`
+
+📌 Linear Algebra:
+- `np.dot()`, `np.transpose()`, `np.linalg.inv()`
+
+📌 Random:
+- `np.random.rand()`, `np.random.randint()`
+
+🔹 8. Broadcasting Explained
+------------------------------
+📊 Broadcasting allows NumPy to **automatically expand arrays** for element-wise operations.
+
+Example:
+```python
+a = np.array([1, 2, 3])
+b = 10
+print(a + b)  # [11, 12, 13]
+```
+
+🔹 9. Real-World Applications
+-------------------------------
+🌍 NumPy is the foundation for many fields:
+- 📊 Data Science (with Pandas)
+- 🤖 Machine Learning (with Scikit-Learn, TensorFlow)
+- 🔬 Scientific Computing
+- 🖼️ Image Processing (uses in like photoshop tools, opencv for faster processing )
+- 📈 Financial Analytics
+- 🧪 Engineering Simulations
+- 📈 Stock Marketing 
+- 🔬 Medical Research (to analyze sequences of DNA, detect disease)
+
+🔹 10. Summary ✨
+------------------
+NumPy is an **essential tool** for numerical computing in Python.  
+It makes your code **faster**, **cleaner**, and **more memory-efficient**.
+
+📚 Must-learn for every Data Scientist, ML Engineer, or Python Developer!
+
+
+---------------------------------------------------------------------------------
+what is standard deviation in numpy?
+Ans. The standard deviation is the square root of the variance, which is the average of the squared differences between each data point and the mean.

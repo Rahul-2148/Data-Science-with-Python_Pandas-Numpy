@@ -1,0 +1,51 @@
+Q. Why use Broadcasting in NumPy?
+Ans:
+
+➡️ NumPy me broadcasting ka use isliye hota hai taki hum arrays ke beech me mathematical operations easily perform kar sake – chahe arrays alag-alag shape ya size ke hi kyu na ho.
+
+➡️ Broadcasting se hum bina loop likhe, directly operations kar sakte hain – clean, fast aur efficient tariqe se.
+
+🧠 Jarurat kyu padi Broadcasting ki?
+
+👉 Real life me jab hum arrays ke saath kaam karte hain (1D, 2D, 3D ya multi-dimensional), to kai baar aesa hota hai ki ek array chhota hota hai aur dusra bada. Fir bhi hume dono pe ek saath operation karna hota hai. Agar broadcasting nahi hoti, to hume manually loop chala ke size match karna padta – jo slow aur boring hota.
+
+💡 Example: Grocery Store Analogy
+
+Maan lo tumhare paas ek array hai item prices ka:
+prices = [100, 200, 150, 250]
+
+Ab tum chahte ho ki sab item pe ₹10 discount apply ho jaye.
+
+Agar tum loop lagate to:
+for i in range(len(prices)):
+    prices[i] = prices[i] - 10
+
+Par NumPy me broadcasting se sirf ek line me kaam ho jata hai:
+final_prices = prices - 10
+
+Yaha 10 ko automatically har item ke sath apply kar diya gaya – isko hi broadcasting kehte hain 🧾✨
+
+⚙️ Behind the scenes:
+Chhota array (yaha 10) ko bada array (prices) ke size ke according virtually expand kiya jata hai – bina actual memory me copy banaye.
+
+📊 Aur Example:
+a = [[1, 2, 3],
+     [4, 5, 6]]
+
+b = [10, 20, 30]
+
+a + b = 
+[[11, 22, 33],
+ [14, 25, 36]]
+
+➡️ NumPy ne b ko har row ke liye automatically match kar diya (broadcast kar diya).
+
+✅ Broadcasting ke Fayde:
+- No need for loops (fast code)
+- Different shape ke arrays bhi kaam kar lete hain
+- Clean aur readable syntax
+- Memory efficient
+
+🎯 Final Note:
+Broadcasting ek shortcut hai mathematical operations ko efficient aur smart tarike se perform karne ka, jab arrays ka size match nahi karta.
+
